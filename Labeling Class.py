@@ -1,6 +1,4 @@
-
-class labelling:
-
+class LabelClass:
     """
     Build a column call new label.
   
@@ -11,22 +9,18 @@ class labelling:
   
     Returns:
     DataFrame
-    
     """
 
     def __init__(self, data):
         self.data = data
 
-    
-    def label(self,data):
-
-        def Labelled(df):
+    def labelRow(self, data):
 
             junior_keys = {'entry', 'i', 'intern', 'junior', 'intership'}
             mid_keys = {'associate', 'ii', 'staff', 'mid', 'mid-senior'}
             senior_keys = {'sr','sr.','senior', 'lead','manager','iii', 'director', 'executive', 'president', 'vice'}
             
-            for word in df['Title'].lower().split():
+            for word in data['Title'].lower().split():
                 # If a job has a junior keyword then it is a junior job
                 if word in junior_keys:
                     
@@ -50,7 +44,11 @@ class labelling:
                         return "Junior"
                     else:
                         return "Senior"
+
+    # def label(self,data):
                         
-        data['new_label'] = data.apply(Labelled, axis= 1)
-        data_labelled = data.dropna(subset = ['new_label'])
-        return data_labelled
+data['new_label'] = labelRow(data)
+data_labelled = data.dropna(subset = ['new_label'])
+
+
+
