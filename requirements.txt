@@ -1,0 +1,14 @@
+Requirements.txt
+
+Python V 3.10.2
+git V 2.35.3.windows.1
+xgboost==1.6.2
+imbalanced-learn==0.9.1
+imblearn==0.0
+ipykernel==6.9.0
+ipython==8.0.1
+scikit-learn==1.1.2
+xgboost==1.6.2
+pandas==1.4.0
+notebook==6.4.8
+joblib==1.1.0
